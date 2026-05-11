@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">  
 
   <style>
     :root {
@@ -420,15 +420,27 @@
       top: 190px;
     }
 
-    .stage-bubble:nth-child(3) {
-      left: 190px;
-      top: 100px;
-    }
+.stage-bubble:nth-child(3) {
+  left: 155px;
+  top: 125px;
+}
 
-    .stage-bubble:nth-child(4) {
-      right: 0;
-      top: 20px;
-    }
+.stage-bubble:nth-child(4) {
+  right: 5px;
+  top: 20px;
+}
+
+    .stage-bubble:nth-child(3) {
+  max-width: 200px;
+}
+
+.stage-bubble:nth-child(4) {
+  max-width: 195px;
+}
+
+    .stage-icon i {
+  color: #ffffff;
+}
 
     .stage-icon {
       width: 86px;
@@ -651,17 +663,32 @@
     }
 
     .plan-icon {
-      width: 76px;
-      height: 76px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: currentColor;
-      color: var(--white);
-      font-size: 1.7rem;
-      box-shadow: 0 18px 32px rgba(6, 26, 74, 0.16);
-      margin-bottom: 26px;
-    }
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-size: 1.7rem;
+  box-shadow: 0 18px 32px rgba(6, 26, 74, 0.16);
+  margin-bottom: 26px;
+}
+
+.plan-icon i {
+  color: #ffffff;
+}
+
+.plan-card.blue .plan-icon {
+  background: linear-gradient(135deg, var(--blue), #0a77df);
+}
+
+.plan-card.green .plan-icon {
+  background: linear-gradient(135deg, var(--green), #14b94f);
+}
+
+.plan-card.purple .plan-icon {
+  background: linear-gradient(135deg, var(--purple), #7423c7);
+}
 
     .plan-card.green .plan-icon {
       margin-top: 22px;
@@ -732,12 +759,23 @@
       margin-top: 2px;
     }
 
-    .plan-cta {
-      margin-top: auto;
-      width: 100%;
-      color: var(--white);
-      background: currentColor;
-    }
+.plan-cta {
+  margin-top: auto;
+  width: 100%;
+  color: #ffffff;
+}
+
+.plan-card.blue .plan-cta {
+  background: linear-gradient(135deg, var(--blue), #0a77df);
+}
+
+.plan-card.green .plan-cta {
+  background: linear-gradient(135deg, var(--green), #14b94f);
+}
+
+.plan-card.purple .plan-cta {
+  background: linear-gradient(135deg, var(--purple), #7423c7);
+}
 
     /* QUOTE */
 
