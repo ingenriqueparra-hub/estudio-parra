@@ -5,13 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Estudio Jurídico | Soluciones Legales 360</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     :root {
@@ -20,17 +17,11 @@
       --orange: #ff4b16;
       --green: #099239;
       --purple: #5a1499;
-      --gold: #d79b23;
       --text: #111936;
       --muted: #5c6380;
-      --light: #f7f9ff;
       --white: #ffffff;
-      --line: #d9e1f3;
       --shadow: 0 24px 70px rgba(6, 26, 74, 0.12);
       --soft-shadow: 0 14px 40px rgba(6, 26, 74, 0.10);
-      --radius-xl: 34px;
-      --radius-lg: 24px;
-      --radius-md: 18px;
     }
 
     * {
@@ -109,16 +100,16 @@
       color: var(--orange);
     }
 
+    .text-blue {
+      color: var(--blue);
+    }
+
     .text-green {
       color: var(--green);
     }
 
     .text-purple {
       color: var(--purple);
-    }
-
-    .text-blue {
-      color: var(--blue);
     }
 
     .btn {
@@ -175,7 +166,6 @@
       position: absolute;
       border-radius: 45% 55% 60% 40% / 55% 45% 55% 45%;
       background: linear-gradient(135deg, rgba(7, 93, 201, 0.08), rgba(90, 20, 153, 0.08));
-      filter: blur(0.2px);
       pointer-events: none;
       z-index: 0;
     }
@@ -303,10 +293,6 @@
       gap: 60px;
     }
 
-    .hero-copy {
-      position: relative;
-    }
-
     .hero-logo-row {
       display: flex;
       align-items: center;
@@ -376,112 +362,249 @@
       flex-wrap: wrap;
     }
 
+    /* HERO CARD NUEVO */
+
     .hero-card {
-      background: rgba(255, 255, 255, 0.78);
+      position: relative;
+      min-height: 620px;
+      border-radius: 46px;
+      padding: 34px;
+      background:
+        radial-gradient(circle at 88% 12%, rgba(90, 20, 153, 0.13), transparent 28%),
+        radial-gradient(circle at 10% 82%, rgba(7, 93, 201, 0.12), transparent 30%),
+        rgba(255, 255, 255, 0.86);
       border: 1px solid rgba(6, 26, 74, 0.08);
       box-shadow: var(--shadow);
-      border-radius: 42px;
-      padding: 36px 30px;
-      position: relative;
-      min-height: 560px;
       overflow: hidden;
+      isolation: isolate;
     }
 
     .hero-card::before {
       content: "";
       position: absolute;
-      width: 420px;
-      height: 330px;
-      right: -100px;
-      top: -50px;
-      border-radius: 45% 55% 60% 40%;
-      background: rgba(6, 26, 74, 0.035);
+      width: 220px;
+      height: 150px;
+      right: 20px;
+      top: 18px;
+      background-image: radial-gradient(rgba(6, 26, 74, 0.16) 2px, transparent 2px);
+      background-size: 13px 13px;
+      opacity: 0.35;
+      z-index: -1;
     }
 
-    .timeline-visual {
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      right: -170px;
+      bottom: -180px;
+      background: rgba(255, 75, 22, 0.08);
+      z-index: -1;
+    }
+
+    .legal-dashboard {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .dashboard-head {
+      display: grid;
+      grid-template-columns: 76px 1fr;
+      gap: 18px;
+      align-items: center;
+      padding: 4px 4px 10px;
+    }
+
+    .dashboard-main-icon {
+      width: 76px;
+      height: 76px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--navy), #0b2d78);
+      color: #ffffff;
+      font-size: 1.9rem;
+      box-shadow: 0 20px 45px rgba(6, 26, 74, 0.24);
+    }
+
+    .dashboard-main-icon i {
+      color: #ffffff;
+    }
+
+    .dashboard-head span {
+      display: inline-flex;
+      color: var(--orange);
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 7px;
+    }
+
+    .dashboard-head h3 {
+      color: var(--navy);
+      font-size: clamp(1.7rem, 2.5vw, 2.5rem);
+      line-height: 0.96;
+      font-weight: 900;
+      letter-spacing: -0.06em;
+      max-width: 420px;
+    }
+
+    .legal-path {
       position: relative;
-      height: 500px;
+      display: grid;
+      gap: 18px;
+      margin-top: 8px;
+      padding-left: 22px;
     }
 
-    .curve-line {
+    .legal-path::before {
+      content: "";
       position: absolute;
-      inset: 60px 20px 30px;
-      z-index: 1;
+      left: 50px;
+      top: 34px;
+      bottom: 34px;
+      width: 3px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--blue), var(--green), var(--purple));
+      opacity: 0.28;
     }
 
-    .stage-bubble {
-      position: absolute;
-      width: 230px;
+    .path-step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 76px 1fr;
+      gap: 18px;
+      align-items: center;
+      min-height: 132px;
+      padding: 20px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.90);
+      border: 1px solid rgba(6, 26, 74, 0.08);
+      box-shadow: 0 18px 44px rgba(6, 26, 74, 0.10);
+    }
+
+    .path-step:nth-child(2) {
+      margin-left: 42px;
+    }
+
+    .path-step:nth-child(3) {
+      margin-left: 84px;
+    }
+
+    .path-icon-wrap {
+      position: relative;
+      width: 76px;
+      height: 76px;
+      display: grid;
+      place-items: center;
       z-index: 2;
     }
 
-    .stage-bubble:nth-child(2) {
-      left: 0;
-      top: 190px;
-    }
-
-.stage-bubble:nth-child(3) {
-  left: 155px;
-  top: 125px;
-}
-
-.stage-bubble:nth-child(4) {
-  right: 5px;
-  top: 20px;
-}
-
-    .stage-bubble:nth-child(3) {
-  max-width: 200px;
-}
-
-.stage-bubble:nth-child(4) {
-  max-width: 195px;
-}
-
-    .stage-icon i {
-  color: #ffffff;
-}
-
-    .stage-icon {
-      width: 86px;
-      height: 86px;
+    .path-number {
+      position: absolute;
+      left: -10px;
+      top: -8px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      color: var(--white);
-      font-size: 2rem;
-      box-shadow: 0 18px 36px rgba(6, 26, 74, 0.18);
-      border: 9px solid rgba(255, 255, 255, 0.85);
-      margin-bottom: 12px;
+      background: var(--navy);
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 900;
+      border: 4px solid #ffffff;
+      box-shadow: 0 8px 18px rgba(6, 26, 74, 0.18);
+      z-index: 3;
     }
 
-    .stage-icon.blue {
+    .path-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      font-size: 1.55rem;
+      box-shadow: 0 16px 34px rgba(6, 26, 74, 0.17);
+    }
+
+    .path-icon i {
+      color: #ffffff;
+    }
+
+    .path-icon.blue {
       background: linear-gradient(135deg, var(--blue), #0a77df);
     }
 
-    .stage-icon.green {
-      background: linear-gradient(135deg, var(--green), #14b94f);
+    .path-icon.green {
+      background: linear-gradient(135deg, var(--green), #15b952);
     }
 
-    .stage-icon.purple {
-      background: linear-gradient(135deg, var(--purple), #7528c5);
+    .path-icon.purple {
+      background: linear-gradient(135deg, var(--purple), #7426c6);
     }
 
-    .stage-bubble h4 {
+    .path-content h4 {
       font-size: 1rem;
-      line-height: 1.35;
-      font-weight: 900;
+      line-height: 1.2;
       text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: -0.03em;
       margin-bottom: 8px;
     }
 
-    .stage-bubble p {
-      font-size: 0.9rem;
+    .path-content p {
+      font-size: 0.92rem;
       line-height: 1.55;
-      color: var(--text);
+      color: var(--muted);
+      max-width: 330px;
     }
 
-    /* EVOLUTION SECTION */
+    .hero-card-note {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 18px 20px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255, 75, 22, 0.10), rgba(255, 255, 255, 0.86));
+      border: 1px solid rgba(255, 75, 22, 0.18);
+    }
+
+    .hero-card-note i {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--orange);
+      color: #ffffff;
+      box-shadow: 0 12px 26px rgba(255, 75, 22, 0.25);
+    }
+
+    .hero-card-note strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.98rem;
+      line-height: 1.25;
+      margin-bottom: 4px;
+    }
+
+    .hero-card-note span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    /* EVOLUTION */
 
     .evolution {
       padding-top: 50px;
@@ -563,6 +686,10 @@
       font-size: 1.55rem;
       margin-bottom: 24px;
       box-shadow: 0 16px 32px rgba(6, 26, 74, 0.14);
+    }
+
+    .evolution-icon i {
+      color: #ffffff;
     }
 
     .evolution-item h3 {
@@ -663,35 +790,32 @@
     }
 
     .plan-icon {
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: #ffffff;
-  font-size: 1.7rem;
-  box-shadow: 0 18px 32px rgba(6, 26, 74, 0.16);
-  margin-bottom: 26px;
-}
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      font-size: 1.7rem;
+      box-shadow: 0 18px 32px rgba(6, 26, 74, 0.16);
+      margin-bottom: 26px;
+    }
 
-.plan-icon i {
-  color: #ffffff;
-}
+    .plan-icon i {
+      color: #ffffff;
+    }
 
-.plan-card.blue .plan-icon {
-  background: linear-gradient(135deg, var(--blue), #0a77df);
-}
-
-.plan-card.green .plan-icon {
-  background: linear-gradient(135deg, var(--green), #14b94f);
-}
-
-.plan-card.purple .plan-icon {
-  background: linear-gradient(135deg, var(--purple), #7423c7);
-}
+    .plan-card.blue .plan-icon {
+      background: linear-gradient(135deg, var(--blue), #0a77df);
+    }
 
     .plan-card.green .plan-icon {
+      background: linear-gradient(135deg, var(--green), #14b94f);
       margin-top: 22px;
+    }
+
+    .plan-card.purple .plan-icon {
+      background: linear-gradient(135deg, var(--purple), #7423c7);
     }
 
     .plan-kicker {
@@ -759,23 +883,23 @@
       margin-top: 2px;
     }
 
-.plan-cta {
-  margin-top: auto;
-  width: 100%;
-  color: #ffffff;
-}
+    .plan-cta {
+      margin-top: auto;
+      width: 100%;
+      color: #ffffff;
+    }
 
-.plan-card.blue .plan-cta {
-  background: linear-gradient(135deg, var(--blue), #0a77df);
-}
+    .plan-card.blue .plan-cta {
+      background: linear-gradient(135deg, var(--blue), #0a77df);
+    }
 
-.plan-card.green .plan-cta {
-  background: linear-gradient(135deg, var(--green), #14b94f);
-}
+    .plan-card.green .plan-cta {
+      background: linear-gradient(135deg, var(--green), #14b94f);
+    }
 
-.plan-card.purple .plan-cta {
-  background: linear-gradient(135deg, var(--purple), #7423c7);
-}
+    .plan-card.purple .plan-cta {
+      background: linear-gradient(135deg, var(--purple), #7423c7);
+    }
 
     /* QUOTE */
 
@@ -859,6 +983,10 @@
       font-size: 1.6rem;
       margin-bottom: 24px;
       box-shadow: 0 16px 34px rgba(6, 26, 74, 0.16);
+    }
+
+    .panel-icon i {
+      color: #ffffff;
     }
 
     .panel-icon.blue {
@@ -987,10 +1115,6 @@
       grid-template-columns: 0.85fr 1.15fr;
       gap: 44px;
       align-items: center;
-    }
-
-    .form-copy {
-      position: relative;
     }
 
     .contact-mini-card {
@@ -1168,8 +1292,6 @@
       flex-wrap: wrap;
     }
 
-    /* FLOATING WHATSAPP */
-
     .whatsapp-float {
       position: fixed;
       right: 22px;
@@ -1193,27 +1315,33 @@
 
     .whatsapp-float i {
       font-size: 1.3rem;
+      color: #ffffff;
     }
 
     /* RESPONSIVE */
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1120px) {
       .hero-grid,
       .form-grid,
       .two-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding-top: 140px;
-      }
-
       .hero-card {
         min-height: auto;
       }
 
-      .timeline-visual {
-        height: 440px;
+      .path-step:nth-child(2),
+      .path-step:nth-child(3) {
+        margin-left: 0;
+      }
+
+      .legal-path {
+        padding-left: 0;
+      }
+
+      .legal-path::before {
+        left: 57px;
       }
 
       .plans-grid {
@@ -1275,31 +1403,6 @@
 
       .hero h1 {
         font-size: clamp(3rem, 14vw, 5rem);
-      }
-
-      .stage-bubble {
-        width: 190px;
-      }
-
-      .stage-bubble:nth-child(2) {
-        left: 0;
-        top: 200px;
-      }
-
-      .stage-bubble:nth-child(3) {
-        left: 36%;
-        top: 115px;
-      }
-
-      .stage-bubble:nth-child(4) {
-        right: 0;
-        top: 5px;
-      }
-
-      .stage-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 1.5rem;
       }
 
       .quote-box {
@@ -1382,37 +1485,36 @@
       }
 
       .hero-card {
-        border-radius: 30px;
-        padding: 26px 18px;
+        padding: 24px;
+        border-radius: 34px;
       }
 
-      .timeline-visual {
-        height: auto;
-        display: grid;
-        gap: 24px;
+      .dashboard-head {
+        grid-template-columns: 1fr;
       }
 
-      .curve-line {
+      .dashboard-main-icon {
+        width: 68px;
+        height: 68px;
+        border-radius: 22px;
+      }
+
+      .legal-path::before {
         display: none;
       }
 
-      .stage-bubble,
-      .stage-bubble:nth-child(2),
-      .stage-bubble:nth-child(3),
-      .stage-bubble:nth-child(4) {
-        position: relative;
-        left: auto;
-        right: auto;
-        top: auto;
-        width: 100%;
-        display: grid;
-        grid-template-columns: 74px 1fr;
-        gap: 14px;
-        align-items: center;
+      .path-step {
+        grid-template-columns: 1fr;
+        min-height: auto;
       }
 
-      .stage-icon {
-        margin: 0;
+      .path-icon-wrap {
+        width: 70px;
+        height: 70px;
+      }
+
+      .hero-card-note {
+        grid-template-columns: 1fr;
       }
 
       .evolution-wrap,
@@ -1459,7 +1561,6 @@
 
 <body>
 
-  <!-- HEADER -->
   <header class="header">
     <nav class="nav">
       <a href="#inicio" class="brand">
@@ -1490,7 +1591,6 @@
     </nav>
   </header>
 
-  <!-- HERO -->
   <main id="inicio" class="hero">
     <div class="blob blob-one"></div>
     <div class="blob blob-two"></div>
@@ -1534,50 +1634,70 @@
       </section>
 
       <section class="hero-card">
-        <div class="timeline-visual">
-          <svg class="curve-line" viewBox="0 0 520 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 300 C85 150, 175 255, 245 160 C315 65, 390 135, 498 25"
-              stroke="#061A4A" stroke-width="3" stroke-dasharray="8 8" opacity="0.35"/>
-            <circle cx="20" cy="300" r="7" fill="#075DC9"/>
-            <circle cx="245" cy="160" r="7" fill="#099239"/>
-            <circle cx="498" cy="25" r="7" fill="#5A1499"/>
-          </svg>
-
-          <article class="stage-bubble">
-            <div class="stage-icon blue">
-              <i class="fa-solid fa-headset"></i>
+        <div class="legal-dashboard">
+          <div class="dashboard-head">
+            <div class="dashboard-main-icon">
+              <i class="fa-solid fa-scale-balanced"></i>
             </div>
             <div>
-              <h4 class="text-blue">1. Atención Legal</h4>
-              <p>Responde consultas, orienta y registra casos.</p>
+              <span>Ruta Legal 360</span>
+              <h3>De la consulta inicial a la defensa estratégica.</h3>
             </div>
-          </article>
+          </div>
 
-          <article class="stage-bubble">
-            <div class="stage-icon green">
-              <i class="fa-solid fa-folder-open"></i>
-            </div>
-            <div>
-              <h4 class="text-green">2. Gestión Jurídica</h4>
-              <p>Ordena documentos, procesos y obligaciones legales.</p>
-            </div>
-          </article>
+          <div class="legal-path">
+            <article class="path-step">
+              <div class="path-icon-wrap">
+                <div class="path-number">01</div>
+                <div class="path-icon blue">
+                  <i class="fa-solid fa-headset"></i>
+                </div>
+              </div>
+              <div class="path-content">
+                <h4 class="text-blue">Atención Legal</h4>
+                <p>Responde consultas, orienta y registra casos para tomar decisiones con mayor claridad.</p>
+              </div>
+            </article>
 
-          <article class="stage-bubble">
-            <div class="stage-icon purple">
-              <i class="fa-solid fa-shield-halved"></i>
-            </div>
+            <article class="path-step">
+              <div class="path-icon-wrap">
+                <div class="path-number">02</div>
+                <div class="path-icon green">
+                  <i class="fa-solid fa-folder-open"></i>
+                </div>
+              </div>
+              <div class="path-content">
+                <h4 class="text-green">Gestión Jurídica</h4>
+                <p>Ordena documentos, procesos y obligaciones legales para reducir riesgos operativos.</p>
+              </div>
+            </article>
+
+            <article class="path-step">
+              <div class="path-icon-wrap">
+                <div class="path-number">03</div>
+                <div class="path-icon purple">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+              </div>
+              <div class="path-content">
+                <h4 class="text-purple">Defensa Estratégica</h4>
+                <p>Previene riesgos, protege intereses y acompaña decisiones clave para la empresa.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="hero-card-note">
+            <i class="fa-solid fa-circle-check"></i>
             <div>
-              <h4 class="text-purple">3. Defensa Estratégica</h4>
-              <p>Previene riesgos, protege intereses y acompaña decisiones clave.</p>
+              <strong>Modelo legal preventivo, ordenado y estratégico.</strong>
+              <span>Diseñado para empresas, emprendedores y negocios que necesitan respaldo legal confiable.</span>
             </div>
-          </article>
+          </div>
         </div>
       </section>
     </div>
   </main>
 
-  <!-- EVOLUTION -->
   <section class="section evolution" id="evolucion">
     <div class="container">
       <div class="evolution-wrap">
@@ -1626,7 +1746,6 @@
     </div>
   </section>
 
-  <!-- PLANS -->
   <section class="section plans" id="modalidades">
     <div class="decor-dots"></div>
 
@@ -1645,7 +1764,6 @@
       </div>
 
       <div class="plans-grid">
-        <!-- Plan Inicial -->
         <article class="plan-card blue">
           <div class="plan-icon">
             <i class="fa-solid fa-message"></i>
@@ -1674,7 +1792,6 @@
           </a>
         </article>
 
-        <!-- Plan Profesional -->
         <article class="plan-card green">
           <div class="plan-badge">
             <i class="fa-solid fa-star"></i>
@@ -1709,7 +1826,6 @@
           </a>
         </article>
 
-        <!-- Plan Avanzado -->
         <article class="plan-card purple">
           <div class="plan-icon">
             <i class="fa-solid fa-shield"></i>
@@ -1743,7 +1859,6 @@
     </div>
   </section>
 
-  <!-- QUOTE -->
   <section class="quote-section">
     <div class="container">
       <div class="quote-box">
@@ -1755,7 +1870,6 @@
     </div>
   </section>
 
-  <!-- IDEAL + DELIVERABLES -->
   <section class="two-column-section" id="ideal">
     <div class="container two-grid">
       <article class="info-panel ideal">
@@ -1801,7 +1915,6 @@
     </div>
   </section>
 
-  <!-- CLOSING -->
   <section class="closing">
     <div class="container">
       <div class="closing-card">
@@ -1829,12 +1942,11 @@
     </div>
   </section>
 
-  <!-- FORM -->
   <section class="form-section" id="contacto">
     <div class="decor-dots"></div>
 
     <div class="container form-grid">
-      <div class="form-copy">
+      <div>
         <span class="eyebrow">
           <i class="fa-solid fa-paper-plane"></i>
           Contacto
@@ -1906,7 +2018,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -1931,35 +2042,33 @@
     </div>
   </footer>
 
-  <!-- FLOATING WHATSAPP -->
   <a class="whatsapp-float" href="https://wa.me/51958029601?text=Hola,%20deseo%20recibir%20informaci%C3%B3n%20sobre%20los%20servicios%20legales%20empresariales%20360" target="_blank" aria-label="WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
     <span>WhatsApp</span>
   </a>
 
   <script>
-    // Menú móvil
     const mobileToggle = document.getElementById("mobileToggle");
     const menu = document.getElementById("menu");
 
     mobileToggle.addEventListener("click", () => {
       menu.classList.toggle("active");
+
       const icon = mobileToggle.querySelector("i");
       icon.classList.toggle("fa-bars");
       icon.classList.toggle("fa-xmark");
     });
 
-    // Cerrar menú móvil al hacer clic en un enlace
     document.querySelectorAll(".menu a").forEach(link => {
       link.addEventListener("click", () => {
         menu.classList.remove("active");
+
         const icon = mobileToggle.querySelector("i");
         icon.classList.add("fa-bars");
         icon.classList.remove("fa-xmark");
       });
     });
 
-    // Formulario a WhatsApp
     const legalForm = document.getElementById("legalForm");
 
     legalForm.addEventListener("submit", function(event) {
@@ -1972,22 +2081,21 @@
       const tipo = document.getElementById("tipo").value.trim();
       const mensaje = document.getElementById("mensaje").value.trim();
 
-      const whatsappMessage =
-        `Hola, deseo recibir información sobre los servicios legales empresariales 360.%0A%0A` +
-        `Mis datos son:%0A` +
-        `Nombre: ${encodeURIComponent(nombre)}%0A` +
-        `Empresa: ${encodeURIComponent(empresa)}%0A` +
-        `Teléfono: ${encodeURIComponent(telefono)}%0A` +
-        `Correo: ${encodeURIComponent(correo)}%0A` +
-        `Tipo de consulta: ${encodeURIComponent(tipo)}%0A` +
-        `Mensaje: ${encodeURIComponent(mensaje)}`;
+      const whatsappText =
+        `Hola, deseo recibir información sobre los servicios legales empresariales 360.\n\n` +
+        `Mis datos son:\n` +
+        `Nombre: ${nombre}\n` +
+        `Empresa: ${empresa}\n` +
+        `Teléfono: ${telefono}\n` +
+        `Correo: ${correo}\n` +
+        `Tipo de consulta: ${tipo}\n` +
+        `Mensaje: ${mensaje}`;
 
-      const whatsappUrl = `https://wa.me/51958029601?text=${whatsappMessage}`;
+      const whatsappUrl = `https://wa.me/51958029601?text=${encodeURIComponent(whatsappText)}`;
 
       window.open(whatsappUrl, "_blank");
     });
 
-    // Efecto suave al hacer scroll: header más compacto
     const header = document.querySelector(".header");
 
     window.addEventListener("scroll", () => {
